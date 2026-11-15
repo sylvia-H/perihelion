@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>近日點</title>
+    <link rel="icon" id="favicon" href="data:," />
+  </head>
+  <body>
+    <canvas id="stage" aria-hidden="true"></canvas>
+
+    <div id="ui">
+      <header class="brand">
+        <h1>近日點</h1>
+        <button type="button" id="today-date" class="date-btn" data-act="cal" aria-haspopup="dialog" aria-expanded="false"></button>
+        <p id="today-stats"></p>
+      </header>
+
+      <section class="clock" aria-label="番茄鐘">
+        <p id="clock-status" aria-live="polite"></p>
+        <div id="clock-digits" class="digits" role="timer"></div>
+        <div id="clock-actions" class="row"></div>
+      </section>
+
+      <nav class="tasks" aria-label="待辦">
+        <h2 id="tasks-title"></h2>
+        <p id="samples-note" hidden>
+          這幾件是範例，可以直接試。<button type="button" class="link" data-act="clear-samples">清掉範例</button>
+        </p>
+        <ol id="task-list"></ol>
+        <p id="tasks-empty" hidden>軌道上還沒有行星。在下方輸入第一件要做的事。</p>
+      </nav>
+
+      <form class="cmd" id="cmd" autocomplete="off">
+        <label for="cmd-input">新增待辦</label>
+        <input id="cmd-input" type="text" maxlength="80" placeholder="讀一章書 ×2" spellcheck="false" />
+        <p id="cmd-hint">結尾加 ×3 是預估三顆番茄，加 ! 排到最內圈</p>
+      </form>
+
+      <section class="cap" aria-label="今日容量">
+        <p id="cap-text"></p>
+        <div id="cap-pips" class="pips" aria-hidden="true"></div>
+      </section>
+
+      <div class="tools" id="tools"></div>
+
+      <section class="focus" id="focus" aria-label="專注中">
+        <p id="focus-title"></p>
+        <div id="focus-digits" class="digits" aria-hidden="true"></div>
+        <p id="focus-sub"></p>
+        <div id="focus-actions" class="row"></div>
+      </section>
+
+      <aside class="sheet" id="sheet" aria-label="紀錄與設定" hidden></aside>
+      <div class="help" id="help" hidden></div>
+      <section class="cal" id="cal" aria-label="月曆" hidden></section>
+      <div id="labels" aria-hidden="true"></div>
+      <div class="tip" id="tip" hidden></div>
+      <div class="toast" id="toast" role="status" hidden></div>
+      <div class="perf" id="perf" hidden></div>
+    </div>
+
+    <noscript>近日點需要 JavaScript 與 WebGL 才能顯示。</noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
