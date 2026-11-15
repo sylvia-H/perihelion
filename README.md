@@ -4,7 +4,7 @@
 
 A Pomodoro timer where today's tasks orbit a sun: the more urgent, the closer in, and each planet lights up as you focus on it.
 
-![先是整個星系：六件待辦各自在軌道上；接著是專注時的縮時畫面，一顆有環的行星隨著倒數由暗轉亮；番茄結束後回到星系，進入休息](docs/demo.webp)
+![專注時的縮時畫面：一顆有環的行星隨著倒數由暗轉亮，月亮繞著它走；番茄結束後鏡頭回到整個星系，進入休息](docs/demo.webp)
 
 多數番茄鐘是在待辦清單旁邊放一個計時器。近日點把兩者合成同一個畫面，優先度、預估量、進度、完成紀錄都用星系裡的空間關係來表達：
 
