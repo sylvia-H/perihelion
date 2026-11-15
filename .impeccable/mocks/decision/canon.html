@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>標準番茄鐘</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#F6F7F9;color:#111827;font:400 15px/1.5 "Noto Sans TC","Segoe UI",sans-serif}
+nav{height:60px;background:#fff;border-bottom:1px solid #E5E7EB;display:flex;align-items:center;justify-content:space-between;padding:0 32px;font-weight:700;font-size:18px}
+nav span{font-weight:400;font-size:14px;color:#6B7280}
+main{width:520px;margin:44px auto 0}
+.card{background:#fff;border:1px solid #E5E7EB;border-radius:12px;padding:28px;text-align:center}
+.tabs{display:inline-flex;background:#F3F4F6;border-radius:8px;padding:4px;gap:4px;font-size:14px}
+.tabs b{padding:6px 16px;border-radius:6px;font-weight:500}.tabs b.on{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.t{font-size:120px;font-weight:700;line-height:1.1;font-variant-numeric:tabular-nums;margin:18px 0 10px}
+.go{display:inline-block;background:#E5484D;color:#fff;font-weight:700;font-size:18px;padding:12px 56px;border-radius:8px}
+h2{font-size:16px;margin:28px 0 12px;display:flex;justify-content:space-between}h2 span{font-weight:400;color:#6B7280;font-size:14px}
+.row{background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:13px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.row i{width:20px;height:20px;border:2px solid #D1D5DB;border-radius:50%}.row span{flex:1}.row em{font-style:normal;color:#6B7280;font-size:14px}
+.row.on{border-left:4px solid #E5484D}
+.add{border:2px dashed #D1D5DB;border-radius:8px;padding:13px;text-align:center;color:#6B7280}
+</style></head><body>
+<nav>番茄鐘<span>今日 4 顆 · 紀錄 · 設定</span></nav>
+<main><div class="card"><div class="tabs"><b class="on">專注</b><b>短休息</b><b>長休息</b></div>
+<div class="t">25:00</div><div class="go">開始</div></div>
+<h2>待辦<span>5 項</span></h2>
+<div class="row on"><i></i><span>回覆 HR 的到職日信件</span><em>0／1</em></div>
+<div class="row"><i></i><span>題庫 E 區塊 44–58</span><em>2／3</em></div>
+<div class="row"><i></i><span>教材 C 第 5 章</span><em>1／2</em></div>
+<div class="row"><i></i><span>演算法：二分搜尋兩題</span><em>0／4</em></div>
+<div class="add">＋ 新增待辦</div></main>
+</body></html>

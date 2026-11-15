@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>撕頁日曆</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1440px;height:900px;overflow:hidden;background:#EDE7D6;color:#1B1A17;font:500 13px/1.5 "Noto Sans TC","Microsoft JhengHei",sans-serif;position:relative}
+.num{font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;font-variant-numeric:tabular-nums}
+.top{position:absolute;inset:0 0 auto 0;height:56px;border-bottom:3px solid #1B1A17;display:flex;align-items:stretch}
+.brand{width:300px;background:#0A7B50;color:#EDE7D6;display:flex;align-items:center;padding:0 20px;font-weight:900;font-size:22px;letter-spacing:.2em}
+.date{flex:1;display:flex;align-items:center;gap:22px;padding:0 24px;font-size:13px;letter-spacing:.12em}
+.date b{font-weight:900;font-size:22px;letter-spacing:.05em}
+.timer{width:300px;border-left:3px solid #1B1A17;display:flex;align-items:center;gap:12px;padding:0 16px}
+.timer .num{font-size:38px;line-height:1}
+.btn{border:2px solid #1B1A17;background:#1B1A17;color:#EDE7D6;font:700 13px "Noto Sans TC",sans-serif;padding:6px 14px;border-radius:2px}
+.btn.o{background:none;color:#1B1A17}
+.left{position:absolute;left:0;top:56px;bottom:64px;width:300px;border-right:3px solid #1B1A17}
+.right{position:absolute;right:0;top:56px;bottom:64px;width:300px;border-left:3px solid #1B1A17}
+.plate{background:#1B1A17;color:#EDE7D6;font-weight:900;font-size:13px;letter-spacing:.3em;padding:6px 16px;display:flex;justify-content:space-between}
+.plate.r{background:#D4281C}
+.row{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #1B1A17}
+.row i{font-style:normal;width:26px;height:26px;border:2px solid #0A7B50;color:#0A7B50;border-radius:50%;display:grid;place-items:center;font:800 14px Archivo,sans-serif}
+.row.on{background:#1B1A17;color:#EDE7D6}.row.on i{border-color:#EDE7D6;color:#EDE7D6}
+.row span{font-size:14px;font-weight:700}.row em{font-style:normal;font-size:12px;letter-spacing:.15em;color:#0A7B50}
+.row.on em{color:#EDE7D6}
+.add{position:absolute;left:16px;right:16px;bottom:16px;border:2px solid #1B1A17;padding:9px 12px;font-size:13px;color:#6b665a;background:#F5F0E2}
+.field{position:absolute;left:300px;right:300px;top:56px;bottom:64px;overflow:hidden}
+.orb{position:absolute;border:1.5px solid #1B1A17;border-radius:50%;left:420px;top:380px;transform:translate(-50%,-50%)}
+.sun{position:absolute;left:420px;top:380px;width:216px;height:216px;margin:-108px;border-radius:50%;background:#D4281C;color:#EDE7D6;display:grid;place-items:center}
+.sun .num{font-size:170px;line-height:1;font-weight:900;letter-spacing:-.04em}
+.pl{position:absolute;border-radius:50%;border:1.5px solid #1B1A17;transform:translate(-50%,-50%);
+background:radial-gradient(circle at 30% 28%,#EDE7D6 0 20%,transparent 21%),radial-gradient(var(--c) 42%,transparent 45%) 0 0/7px 7px,linear-gradient(118deg,#EDE7D6 48%,var(--c) 49%)}
+.ring{position:absolute;border:2px solid #1B1A17;border-radius:50%;transform:translate(-50%,-50%) rotate(-18deg)}
+.lb{position:absolute;font-size:13px;font-weight:700;white-space:nowrap}
+.lb small{display:block;font-size:11px;font-weight:500;letter-spacing:.1em;color:#5b574c}
+.cap{padding:14px 16px;border-bottom:1px solid #1B1A17}
+.cells{display:flex;gap:4px;margin-top:8px}.cells b{flex:1;height:22px;background:#0A7B50}.cells b.e{background:none;border:2px solid #0A7B50}.cells b.x{background:none;border:2px dashed #D4281C}
+.log{display:grid;grid-template-columns:92px 1fr;gap:6px;padding:9px 16px;border-bottom:1px solid #1B1A17;font-size:12px}
+.log .num{font-size:15px;font-stretch:75%}
+.day{position:absolute;inset:auto 0 0 0;height:64px;border-top:3px solid #1B1A17;background:repeating-linear-gradient(90deg,#1B1A17 0 1.5px,transparent 1.5px 60px) 0 0/100% 14px no-repeat}
+.day u{position:absolute;top:22px;height:16px;background:#0A7B50}.day s{position:absolute;top:8px;bottom:8px;width:3px;background:#D4281C}
+.day span{position:absolute;bottom:6px;font:800 12px Archivo,sans-serif}
+</style></head><body>
+<div class="top"><div class="brand">近日點</div>
+<div class="date"><b>十一月十二日</b><span>星期四</span><span>NOVEMBER 2026</span><span>今晚 4 顆 · 1 時 40 分</span></div>
+<div class="timer"><span class="num">25:00</span><span class="btn">開始專注</span><span class="btn o">略過</span></div></div>
+<div class="left"><div class="plate"><span>今日待辦</span><span>5</span></div>
+<div class="row on"><i>1</i><span>回覆 HR 的到職日信件</span><em>●</em></div>
+<div class="row"><i>2</i><span>題庫 E 區塊 44–58</span><em>●●○</em></div>
+<div class="row"><i>3</i><span>教材 C 第 5 章</span><em>●○</em></div>
+<div class="row"><i>4</i><span>演算法：二分搜尋兩題</span><em>○○○○</em></div>
+<div class="row"><i>5</i><span>整理面試提問表</span><em>○</em></div>
+<div class="add">新增待辦，例：讀教材 D ×2</div></div>
+<div class="field">
+<div class="orb" style="width:380px;height:160px"></div><div class="orb" style="width:540px;height:228px"></div>
+<div class="orb" style="width:700px;height:296px"></div><div class="orb" style="width:820px;height:344px"></div>
+<div class="sun"><span class="num">12</span></div>
+<div class="pl" style="--c:#D4281C;left:241px;top:353px;width:34px;height:34px"></div><div class="lb" style="left:150px;top:300px">① 回覆 HR 的到職日信件<small>0／1 顆</small></div>
+<div class="ring" style="left:627px;top:307px;width:86px;height:26px"></div>
+<div class="pl" style="--c:#0A7B50;left:627px;top:307px;width:52px;height:52px"></div><div class="lb" style="left:668px;top:262px">② 題庫 E 區塊 44–58<small>2／3 顆</small></div>
+<div class="pl" style="--c:#0A7B50;left:152px;top:475px;width:44px;height:44px"></div><div class="lb" style="left:60px;top:508px">③ 教材 C 第 5 章<small>1／2 顆</small></div>
+<div class="pl" style="--c:#0A7B50;left:756px;top:479px;width:62px;height:62px"></div><div class="lb" style="left:660px;top:522px">④ 演算法：二分搜尋兩題<small>0／4 顆</small></div>
+<div class="pl" style="--c:#0A7B50;left:280px;top:218px;width:30px;height:30px"></div><div class="lb" style="left:304px;top:190px">⑤ 整理面試提問表<small>0／1 顆</small></div>
+</div>
+<div class="right"><div class="plate r"><span>今晚帶長</span><span>排 9／可用 8</span></div>
+<div class="cap">已完成 4 顆、還排著 5 顆，超出 1 顆<div class="cells"><b></b><b></b><b></b><b></b><b class="e"></b><b class="e"></b><b class="e"></b><b class="e"></b><b class="x"></b></div></div>
+<div class="plate"><span>番茄紀錄</span><span>4</span></div>
+<div class="log"><span class="num">19:02–19:27</span><span>題庫 E 區塊 44–58</span></div>
+<div class="log"><span class="num">19:33–19:58</span><span>題庫 E 區塊 44–58</span></div>
+<div class="log"><span class="num">20:10–20:35</span><span>教材 C 第 5 章</span></div>
+<div class="log"><span class="num">20:41–21:06</span><span>已完成：讀 JD 兩份</span></div></div>
+<div class="day"><u style="left:1141px;width:25px"></u><u style="left:1172px;width:25px"></u><u style="left:1209px;width:25px"></u><u style="left:1240px;width:25px"></u><s style="left:1272px"></s>
+<span style="left:6px">0</span><span style="left:366px">6</span><span style="left:726px">12</span><span style="left:1086px">18</span></div>
+</body></html>
