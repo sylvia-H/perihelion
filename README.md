@@ -16,6 +16,22 @@ A Pomodoro timer where today's tasks orbit a sun: the more urgent, the closer in
 
 ## 試試看
 
+**線上版：<https://sylvia-h.github.io/perihelion/>**
+
+第一次打開是空的星系。想先看有資料的樣子，開這幾個示範：
+
+| 連結 | 看到什麼 |
+|---|---|
+| [俯瞰星系](https://sylvia-h.github.io/perihelion/?demo=overview) | 六件待辦、五天的星座、今天的番茄紀錄 |
+| [專注中](https://sylvia-h.github.io/perihelion/?demo=focus) | 專注到一半的畫面 |
+| [休息中](https://sylvia-h.github.io/perihelion/?demo=break) | 休息中的畫面 |
+
+示範模式不讀也不寫你的資料。
+
+線上版的資料一樣只存在你的瀏覽器裡，不會傳到任何地方。
+
+### 在自己的電腦上開
+
 ```
 git clone https://github.com/sylvia-H/perihelion.git
 cd perihelion
@@ -23,17 +39,8 @@ npm install
 npm run build
 ```
 
-然後雙擊 `dist/index.html`。建議把它釘選成瀏覽器分頁。
+然後雙擊 `dist/index.html`，不需要 server 也不需要網路。建議把它釘選成瀏覽器分頁。示範模式在本機同樣可用：在網址後面加 `?demo=overview`、`?demo=focus` 或 `?demo=break`。
 
-想先看有資料的樣子，在網址後面加：
-
-| 網址結尾 | 看到什麼 |
-|---|---|
-| `?demo=overview` | 六件待辦、五天的星座、今天的番茄紀錄 |
-| `?demo=focus` | 專注到一半的畫面 |
-| `?demo=break` | 休息中的畫面 |
-
-示範模式不讀也不寫你的資料。
 
 ## 畫面上每樣東西代表什麼
 
